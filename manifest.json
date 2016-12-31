@@ -17,6 +17,11 @@
      "16": "logo16.png",
      "48": "logo48.png"
   },
+  "applications": {
+     "gecko": {
+         "id": "ageitgey-show-facebook-computer-vision-tags@github.com"
+     }
+  },
   "content_scripts": [
     {
         "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
