@@ -63,17 +63,20 @@ These are just a few examples. See what kinds of things Facebook has found in yo
 1. Select the directory where you cloned this repo to.
 1. Visit Facebook!
 
-# Installing Firefox Extension
+# Installing this in Firefox (Nightly Builds with Chrome Extension support only)
 
 1. Clone this repo so you have a copy in a folder locally.
-1. Using a Firefox Nightly build, set ``xpinstall.signatures.required`` to ``false``.
+1. Using a Firefox Nightly build, set `xpinstall.signatures.required` to `false`.
 1. Zip the files so that manifest.json is at the root of the zip file.
 1. Rename it from .zip to .xpi.
 1. Navigate to about:addons.
 1. Drag and drop your XPI onto the page.
 1. Click “Install” in the prompt.
 1. Restart Firefox.
+1. Visit Facebook!
 
 Caveats:
 
 1. This only works for English-speaking Facebook users. I made no attempt to make this work for any other language. Sorry! But you could easily fork this and make it work for a different language. There's not a lot to this.
+
+ - [Álvaro Sarasúa](https://github.com/asarasua) made a Spanish version of this extension [here](https://github.com/asarasua/show-facebook-computer-vision-tags).
