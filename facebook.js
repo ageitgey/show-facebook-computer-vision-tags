@@ -12,6 +12,7 @@ const emoji_map = {
   "bicycle": "🚲",
   "camera": "📷",
   "car": "🚗",
+  "cat": "😺",
   "child": "👦",
   "christmas tree": "🎄",
   "closeup": "👀",
