@@ -1,8 +1,8 @@
 # Show Facebook Computer Vision Tags Chrome Extension
 
-![](https://cloud.githubusercontent.com/assets/896692/21574672/fa4cecb4-ceab-11e6-896c-101025c68dc3.png)
+*Want to try this? [Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US)*
 
-Want to try it? [Install this from the Chrome Web Store](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US)
+![](https://cloud.githubusercontent.com/assets/896692/21574672/fa4cecb4-ceab-11e6-896c-101025c68dc3.png)
 
 Since April 2016, Facebook has been [automatically adding `alt` tags](https://code.facebook.com/posts/457605107772545/under-the-hood-building-accessibility-tools-for-the-visually-impaired-on-facebook/) to images
 you upload that are populated with keywords representing the content of your images:
