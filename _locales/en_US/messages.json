@@ -1,0 +1,203 @@
+{
+   "extension_description": {
+      "message": "Enhance your browsing experience on YouTube™."
+   },
+   "extension_name": {
+      "message": "Show Facebook Computer Vision Tags"
+   },
+   "per": {
+     "message": "1 person"
+   },
+   "pers": {
+     "message": "2 person"
+   },
+   "perso": {
+     "message": "3 person"
+   },
+   "person": {
+     "message": "4 person"
+   },
+   "person5": {
+     "message": "5 person"
+   },
+   "person6": {
+     "message": "6 person"
+   },
+   "person7": {
+     "message": "7 person"
+   },
+   "baby": {
+     "message": "baby"
+   },
+   "beach": {
+     "message": "beach"
+   },
+   "beard": {
+     "message": "beard"
+   },
+   "stand": {
+     "message": "standing"
+   },
+   "bicycle": {
+     "message": "bicycle"
+   },
+   "camera": {
+     "message": "camera"
+   },
+   "car": {
+     "message": "car"
+   },
+   "christmas": {
+     "message": "christmas tree"
+   },
+   "closeup": {
+     "message": "close-up"
+   },
+   "cloud": {
+     "message": "cloud"
+   },
+   "crowd": {
+     "message": "crowd"
+   },
+   "dog": {
+     "message": "dog"
+   },
+   "drink": {
+     "message": "drink"
+   },
+   "eating": {
+     "message": "eating"
+   },
+   "eyeglasses": {
+     "message": "eyeglasses"
+   },
+   "fireworks": {
+     "message": "fireworks"
+   },
+   "flower": {
+     "message": "flower"
+   },
+   "food": {
+     "message": "food"
+   },
+   "grass": {
+     "message": "grass"
+   },
+   "golf": {
+     "message": "golf"
+   },
+   "glasses": {
+     "message": "glasses"
+   },
+   "hat": {
+     "message": "hat"
+   },
+   "indoor": {
+     "message": "indoor"
+   },
+   "living_room": {
+     "message": "living room"
+   },
+   "meme": {
+     "message": "meme"
+   },
+   "mountain": {
+     "message": "mountain"
+   },
+   "nature": {
+     "message": "nature"
+   },
+   "night": {
+     "message": "night"
+   },
+   "ocean": {
+     "message": "ocean"
+   },
+   "office": {
+     "message": "office"
+   },
+   "oneormorepeople": {
+     "message": "one or more people"
+   },
+   "outdoor": {
+     "message": "outdoor"
+   },
+   "peopleeating": {
+     "message": "people eating"
+   },
+   "peoplesitting": {
+     "message": "people sitting"
+   },
+   "peoplesmiling": {
+     "message": "people smiling"
+   },
+   "peoplestanding": {
+     "message": "people standing"
+   },
+   "peopleonstage": {
+     "message": "people on stage"
+   },
+   "peopleplayingmusicalinstruments": {
+     "message": "people playing musical instruments"
+   },
+   "phone": {
+     "message": "phone"
+   },
+   "plant": {
+     "message": "plant"
+   },
+   "selfie": {
+     "message": "selfie"
+   },
+   "shoes": {
+     "message": "shoes"
+   },
+   "sitting": {
+     "message": "sitting"
+   },
+   "sky": {
+     "message": "sky"
+   },
+   "skyscraper": {
+     "message": "skyscraper"
+   },
+   "sleeping": {
+     "message": "sleeping"
+   },
+   "smiling": {
+     "message": "smiling"
+   },
+   "snow": {
+     "message": "snow"
+   },
+   "standing": {
+     "message": "standing"
+   },
+   "stripes": {
+     "message": "stripes"
+   },
+   "suit": {
+     "message": "suit"
+   },
+   "sunglasses": {
+     "message": "sunglasses"
+   },
+   "swimming": {
+     "message": "swimming"
+   },
+   "table": {
+     "message": "table"
+   },
+   "text": {
+     "message": "text"
+   },
+   "tree": {
+     "message": "tree"
+   },
+   "twilight": {
+     "message": "twilight"
+   },
+   "water": {
+     "message": "water"
+   }
+}
