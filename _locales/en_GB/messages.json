@@ -35,6 +35,9 @@
    "beard": {
      "message": "beard"
    },
+   "bedroom": {
+     "message": "bedroom"
+   },
    "stand": {
      "message": "standing"
    },
@@ -47,11 +50,14 @@
    "car": {
      "message": "car"
    },
+   "cat": {
+     "message": "cat"
+   },
    "christmas": {
      "message": "christmas tree"
    },
    "closeup": {
-     "message": "close-up"
+     "message": "closeup"
    },
    "cloud": {
      "message": "cloud"
@@ -199,5 +205,14 @@
    },
    "water": {
      "message": "water"
+   },
+   "wedding": {
+     "message": "wedding"
+   },
+   "playingamusicalinstrument": {
+     "message": "playing a musical instrument"
+   },
+   "peopleplayingsport": {
+     "message": "people playing sport"
    }
 }

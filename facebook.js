@@ -9,9 +9,11 @@ var person7 = chrome.i18n.getMessage("person7");
 var baby  = chrome.i18n.getMessage("baby");
 var beach  = chrome.i18n.getMessage("beach");
 var beard  = chrome.i18n.getMessage("beard");
+var bedroom  = chrome.i18n.getMessage("bedroom");
 var bicycle  = chrome.i18n.getMessage("bicycle");
 var camera  = chrome.i18n.getMessage("camera");
 var car  = chrome.i18n.getMessage("car");
+var cat  = chrome.i18n.getMessage("cat");
 var child  = chrome.i18n.getMessage("child");
 var christmas  = chrome.i18n.getMessage("christmas");
 var closeup  = chrome.i18n.getMessage("closeup");
@@ -66,7 +68,9 @@ var text  = chrome.i18n.getMessage("text");
 var tree  = chrome.i18n.getMessage("tree");
 var twilight  = chrome.i18n.getMessage("twilight");
 var water  = chrome.i18n.getMessage("water");
-
+var wedding  = chrome.i18n.getMessage("wedding");
+var playingamusicalinstrument  = chrome.i18n.getMessage("playingamusicalinstrument");
+var peopleplayingsport  = chrome.i18n.getMessage("peopleplayingsport");
 
 const emoji_map = {
   [per]: "👤",
@@ -79,9 +83,11 @@ const emoji_map = {
   [baby]: "🍼",
   [beach]: "🏖",
   [beard]: "👴",
+  [bedroom]: "🛏",
   [bicycle]: "🚲",
   [camera]: "📷",
   [car]: "🚗",
+  [cat]: "😺",
   [child]: "👦",
   [christmas]: "🎄",
   [closeup]: "👀",
@@ -109,6 +115,7 @@ const emoji_map = {
   [oneormorepeople]: "👥",
   [outdoor]: "🚵",
   [peopleeating]: "🍽",
+  [peopleplayingsport]: "🏀",
   [peoplesitting]: "⑁",
   [peoplesmiling]: "😂",
   [peoplestanding]: "🕴",
@@ -116,6 +123,7 @@ const emoji_map = {
   [peopleplayingmusicalinstruments]: "🎸",
   [phone]: "📱",
   [plant]: "🌿",
+  [playingamusicalinstrument]: "🎸",
   [selfie]: "🤳",
   [shoes]: "👡",
   [sitting]: "⑁",
@@ -133,7 +141,8 @@ const emoji_map = {
   [text]: "🔠",
   [tree]: "🌴",
   [twilight]: "🌃",
-  [water]: "💧"
+  [water]: "💧",
+  [wedding]: "💒"
 }
 
 const show_facebook_cv_tags = function() {
