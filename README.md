@@ -1,5 +1,7 @@
 # Show Facebook Computer Vision Tags Chrome Extension
 
+*Want to try this? [Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US)*
+
 ![](https://cloud.githubusercontent.com/assets/896692/21574672/fa4cecb4-ceab-11e6-896c-101025c68dc3.png)
 
 Since April 2016, Facebook has been [automatically adding `alt` tags](https://code.facebook.com/posts/457605107772545/under-the-hood-building-accessibility-tools-for-the-visually-impaired-on-facebook/) to images
@@ -56,23 +58,17 @@ These are just a few examples. See what kinds of things Facebook has found in yo
 
 # Installing this Chrome Extension
 
+Option 1: From the Chrome Web Store
+
+1. [Click here and choose "+ Add to Chrome"](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US)
+
+Option 2: From Source
+
 1. Clone this repo so you have a copy in a folder locally.
 1. Open `chrome://extensions` in the location or go to `Tools` > `Extensions`
 1. Enable `Developer mode` by checking the checkbox in the upper-right corner.
 1. Click on the button labelled `Load unpacked extension...`.
 1. Select the directory where you cloned this repo to.
-1. Visit Facebook!
-
-# Installing this in Firefox (Nightly Builds with Chrome Extension support only)
-
-1. Clone this repo so you have a copy in a folder locally.
-1. Using a Firefox Nightly build, set `xpinstall.signatures.required` to `false`.
-1. Zip the files so that manifest.json is at the root of the zip file.
-1. Rename it from .zip to .xpi.
-1. Navigate to about:addons.
-1. Drag and drop your XPI onto the page.
-1. Click “Install” in the prompt.
-1. Restart Firefox.
 1. Visit Facebook!
 
 Caveats:
