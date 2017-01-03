@@ -1,6 +1,6 @@
 # Show Facebook Computer Vision Tags Chrome Extension
 
-*Want to try this? [Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US)*
+*Want to try this? [Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US) or the [Firefox Add-ons website](https://addons.mozilla.org/en-US/firefox/addon/show-computer-vision-tags/)*
 
 ![](https://cloud.githubusercontent.com/assets/896692/21574672/fa4cecb4-ceab-11e6-896c-101025c68dc3.png)
 
@@ -70,6 +70,12 @@ Option 2: From Source
 1. Click on the button labelled `Load unpacked extension...`.
 1. Select the directory where you cloned this repo to.
 1. Visit Facebook!
+
+# Installing in Firefox
+
+From the Add-ons website:
+
+1. [Click here and choose "+ Add to Firefox"](https://addons.mozilla.org/en-US/firefox/addon/show-computer-vision-tags/)
 
 Caveats:
 
