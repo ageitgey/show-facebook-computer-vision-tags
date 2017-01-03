@@ -76,3 +76,4 @@ Caveats:
 1. This only works for English-speaking Facebook users. I made no attempt to make this work for any other language. Sorry! But you could easily fork this and make it work for a different language. There's not a lot to this.
 
  - [Álvaro Sarasúa](https://github.com/asarasua) made a Spanish version of this extension [here](https://github.com/asarasua/show-facebook-computer-vision-tags).
+ - [Nicolas Raube](https://github.com/nicolasraube) made a German version of this extension [here](https://github.com/nicolasraube/show-facebook-computer-vision-tags).
