@@ -118,5 +118,3 @@ const observer = new MutationObserver(function(mutations) {
 const config = { attributes: true, childList: true, characterData: false }
 
 observer.observe(document.body, config);
-
-show_facebook_cv_tags();
