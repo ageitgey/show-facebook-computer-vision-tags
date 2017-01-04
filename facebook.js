@@ -77,7 +77,25 @@ const emoji_map = {
 
 const TAGS_DEFAULT_HTML = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
 
-const show_facebook_cv_tags = function() {
+const show_facebook_cv_tags = function(el, tags) {
+  let html = TAGS_DEFAULT_HTML;
+
+  tags.forEach(function(tag){
+    let prefix = "∙";
+
+    if (tag in emoji_map)
+      prefix = emoji_map[tag];
+
+    html += `<li>${prefix} ${tag}</li>`;
+  });
+
+  html += "</ul>";
+
+  el.style.position = 'relative';
+  el.insertAdjacentHTML('afterend', html);
+}
+
+const detect_facebook_cv_tags = function() {
   const TAG_PREFIX = "Image may contain: ";
   const images = [...document.getElementsByTagName('img')];
 
@@ -90,30 +108,14 @@ const show_facebook_cv_tags = function() {
     const altText = el.alt;
     const isCVTag = altText.startsWith(TAG_PREFIX);
 
-    if (isCVTag) {
-      const tags = altText.slice(TAG_PREFIX.length).split(/, | and /);
-      let html = TAGS_DEFAULT_HTML;
-
-      tags.forEach(function(tag){
-        let prefix = "∙";
-
-        if (tag in emoji_map)
-          prefix = emoji_map[tag];
-
-        html += `<li>${prefix} ${tag}</li>`;
-      });
-
-      html += "</ul>";
-
-      el.style.position = 'relative';
-      el.insertAdjacentHTML('afterend', html);
-    }
+    if (isCVTag)
+      show_facebook_cv_tags(el, altText.slice(TAG_PREFIX.length).split(/, | and /))
   });
 };
 
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-        show_facebook_cv_tags();
+        detect_facebook_cv_tags();
     });
 });
 
@@ -121,4 +123,4 @@ const config = { attributes: true, childList: true, characterData: false }
 
 observer.observe(document.body, config);
 
-show_facebook_cv_tags();
+detect_facebook_cv_tags();
