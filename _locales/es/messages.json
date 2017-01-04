@@ -1,0 +1,191 @@
+{
+   "extension_description": {
+      "message": "Shows what Facebook thinks your pictures contain"
+   },
+   "extension_name": {
+      "message": "Show Facebook Computer Vision Tags"
+   },
+   "per": {
+     "message": "una persona"
+   },
+   "pers": {
+     "message": "2 personas"
+   },
+   "perso": {
+     "message": "3 personas"
+   },
+   "person": {
+     "message": "4 personas"
+   },
+   "person5": {
+     "message": "5 personas"
+   },
+   "person6": {
+     "message": "6 personas"
+   },
+   "person7": {
+     "message": "7 personas"
+   },
+   "baby": {
+     "message": "bebé"
+   },
+   "beach": {
+     "message": "playa"
+   },
+   "beard": {
+     "message": "barba"
+   },
+   "stand": {
+     "message": "bicicleta"
+   },
+   "bicycle": {
+     "message": "camara"
+   },
+   "camera": {
+     "message": "coche"
+   },
+   "car": {
+     "message": "niño"
+   },
+   "christmas": {
+     "message": "árbol de navidad"
+   },
+   "closeup": {
+     "message": "primer plano"
+   },
+   "cloud": {
+     "message": "nube"
+   },
+   "crowd": {
+     "message": "multitud"
+   },
+   "dog": {
+     "message": "perro"
+   },
+   "drink": {
+     "message": "bebida"
+   },
+   "eating": {
+     "message": "comiendo"
+   },
+   "eyeglasses": {
+     "message": "gafas"
+   },
+   "flower": {
+     "message": "flor"
+   },
+   "food": {
+     "message": "comida"
+   },
+   "golf":{
+     "message": "golf"
+   },
+   "grass": {
+     "message": "hierba"
+   },
+   "hat": {
+     "message": "sombrero"
+   },
+   "indoor": {
+     "message": "interior"
+   },
+   "living_room": {
+     "message": "salón"
+   },
+   "meme": {
+     "message": "meme"
+   },
+   "mountain": {
+     "message": "montaña"
+   },
+   "nature": {
+     "message": "naturaleza"
+   },
+   "night": {
+     "message": "noche"
+   },
+   "ocean": {
+     "message": "océano"
+   },
+   "office": {
+     "message": "oficina"
+   },
+   "oneormorepeople": {
+     "message": "una o varias personas"
+   },
+   "outdoor": {
+     "message": "exterior"
+   },
+   "peopleeating": {
+     "message": "personas comiendo"
+   },
+   "peoplesitting": {
+     "message": "personas sentadas"
+   },
+   "peoplesmiling": {
+     "message": "personas sonriendo"
+   },
+   "peoplestanding": {
+     "message": "personas de pie"
+   },
+   "phone": {
+     "message": "teléfono"
+   },
+   "plant": {
+     "message": "planta"
+   },
+   "selfie": {
+     "message": "selfie"
+   },
+   "shoes": {
+     "message": "zapatos"
+   },
+   "sitting": {
+     "message": "sentado"
+   },
+   "sky": {
+     "message": "cielo"
+   },
+   "skyscraper": {
+     "message": "rascacielos"
+   },
+   "sleeping": {
+     "message": "durmiendo"
+   },
+   "smiling": {
+     "message": "sonriendo"
+   },
+   "snow": {
+     "message": "nieve"
+   },
+   "standing": {
+     "message": "de pie"
+   },
+   "stripes": {
+     "message": "rayas"
+   },
+   "suit": {
+     "message": "de traje"
+   },
+   "sunglasses": {
+     "message": "gafas de sol"
+   },
+   "swimming": {
+     "message": "nadando"
+   },
+   "table": {
+     "message": "mesa"
+   },
+   "text": {
+     "message": "texto"
+   },
+   "tree": {
+     "message": "árbol"
+   },
+   "twilight": {
+     "message": "atardecer"
+   },
+   "water": {
+     "message": "agua"
+   }
+}

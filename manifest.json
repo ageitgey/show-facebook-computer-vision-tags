@@ -1,8 +1,10 @@
 {
-  "name": "Show Facebook Computer Vision Tags",
-  "version": "0.0.1",
+  "name": "__MSG_extension_name__",
+  "version": "0.0.3",
+  "author": "Adam Geitgey",
   "manifest_version": 2,
-  "description": "Shows what Facebook thinks your pictures contain",
+  "description": "__MSG_extension_description__",
+  "default_locale": "en",
   "permissions": [
     "http://www.facebook.com/*", "https://www.facebook.com/*"
   ],
