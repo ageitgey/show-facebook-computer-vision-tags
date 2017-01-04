@@ -72,7 +72,8 @@ const emoji_map = {
   "tree": "🌴",
   "twilight": "🌃",
   "water": "💧",
-  "wedding": "💒"
+  "wedding": "💒",
+  "No tags": ""
 }
 
 const TAGS_DEFAULT_HTML = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
@@ -81,7 +82,7 @@ const show_facebook_cv_tags = function(el, tags) {
   let html = TAGS_DEFAULT_HTML;
 
   tags.forEach(function(tag){
-    let prefix = "∙";
+    let prefix = "∙ ";
 
     if (tag in emoji_map)
       prefix = emoji_map[tag];
@@ -97,6 +98,7 @@ const show_facebook_cv_tags = function(el, tags) {
 
 const detect_facebook_cv_tags = function() {
   const TAG_PREFIX = "Image may contain: ";
+  const NO_TAG_ALT = "No automatic alt text available.";
   const images = [...document.getElementsByTagName('img')];
 
   images.forEach(function(el) {
@@ -107,9 +109,12 @@ const detect_facebook_cv_tags = function() {
 
     const altText = el.alt;
     const isCVTag = altText.startsWith(TAG_PREFIX);
+    const isCVNoTag = altText === NO_TAG_ALT;
 
     if (isCVTag)
-      show_facebook_cv_tags(el, altText.slice(TAG_PREFIX.length).split(/, | and /))
+      show_facebook_cv_tags(el, altText.slice(TAG_PREFIX.length).split(/, | and /));
+    else if (isCVNoTag)
+      show_facebook_cv_tags(el, ["No tags"]);
   });
 };
 
