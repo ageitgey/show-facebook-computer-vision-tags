@@ -1,11 +1,13 @@
 {
   "name": "Show Facebook Computer Vision Tags",
   "version": "0.0.1",
+  "author": "Adam Geitgey",
   "manifest_version": 2,
   "description": "Shows what Facebook thinks your pictures contain",
   "permissions": [
     "http://www.facebook.com/*", "https://www.facebook.com/*"
   ],
+  "web_accessible_resources": [ "locales/*"],
   "browser_action": {
     "default_icon": {
       "19": "logo16.png",
