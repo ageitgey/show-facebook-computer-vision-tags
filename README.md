@@ -77,9 +77,13 @@ From the Add-ons website:
 
 1. [Click here and choose "+ Add to Firefox"](https://addons.mozilla.org/en-US/firefox/addon/show-computer-vision-tags/)
 
-Caveats:
+# Caveats
 
 1. This only works for English-speaking Facebook users. I made no attempt to make this work for any other language. Sorry! But you could easily fork this and make it work for a different language. There's not a lot to this.
 
  - [Álvaro Sarasúa](https://github.com/asarasua) made a Spanish version of this extension [here](https://github.com/asarasua/show-facebook-computer-vision-tags).
  - [Nicolas Raube](https://github.com/nicolasraube) made a German version of this extension [here](https://github.com/nicolasraube/show-facebook-computer-vision-tags).
+
+# Press
+
+* [New York Magazine select/all - See What Facebook Thinks Is in Your Photos](http://nymag.com/selectall/2017/01/see-what-facebook-thinks-is-in-your-photos.html)
