@@ -1,28 +1,39 @@
 {
-  "name": "Show Facebook Computer Vision Tags",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "Shows what Facebook thinks your pictures contain",
-  "permissions": [
-    "http://www.facebook.com/*", "https://www.facebook.com/*"
-  ],
-  "browser_action": {
-    "default_icon": {
-      "19": "logo16.png",
-      "38": "logo48.png"
+    "author": "coolpeopleontheinternet",
+    "browser_action": {
+        "default_icon": {
+            "19": "logo16.png",
+            "38": "logo48.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.facebook.com/*",
+                "https://www.facebook.com/*"
+            ],
+            "js": [
+                "facebook.js"
+            ],
+            "run_at": "document_idle",
+            "all_frames": false
+        }
+    ],
+    "description": "Shows what Facebook thinks your pictures contain",
+    "icons": {
+        "16": "logo16.png",
+        "48": "logo48.png",
+        "128": "logo128.png"
+    },
+    "manifest_version": 2,
+    "name": "Show Facebook Computer Vision Tags",
+    "permissions": [
+        "http://www.facebook.com/*",
+        "https://www.facebook.com/*"
+    ],
+    "version": "0.0.1",
+    "-ms-preload": {
+        "backgroundScript": "backgroundScriptsAPIBridge.js",
+        "contentScript": "contentScriptsAPIBridge.js"
     }
-  },
-  "icons": {
-     "128": "logo128.png",
-     "16": "logo16.png",
-     "48": "logo48.png"
-  },
-  "content_scripts": [
-    {
-        "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
-        "js" : ["facebook.js"],
-        "run_at" : "document_idle",
-        "all_frames" : false
-    }
-  ]
 }
