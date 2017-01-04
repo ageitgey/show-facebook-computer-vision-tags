@@ -77,7 +77,15 @@ const emoji_map = {
 
 const show_facebook_cv_tags = function() {
   const TAG_PREFIX = "Image may contain: ";
-  const images = [...document.getElementsByTagName('img')];
+
+//  const images = [...document.getElementsByTagName('img')];
+
+
+  var org = document.getElementsByTagName('img'); 
+  var images = [];
+  for(var i = 0; i < org.length; i++) {
+      images.push(org[i]);
+  }
 
   images.forEach(function(el) {
     if (el.hasAttribute("data-prev-alt") && el.getAttribute("data-prev-alt") === el.getAttribute("alt"))
