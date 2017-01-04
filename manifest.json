@@ -6,12 +6,6 @@
   "permissions": [
     "http://www.facebook.com/*", "https://www.facebook.com/*"
   ],
-  "browser_action": {
-    "default_icon": {
-      "19": "logo16.png",
-      "38": "logo48.png"
-    }
-  },
   "icons": {
      "128": "logo128.png",
      "16": "logo16.png",
