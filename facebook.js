@@ -1,4 +1,11 @@
-const emoji_map = {
+// CONFIG
+const TAG_PREFIX = "Image may contain: ";
+const REGEX_SPLIT_TAGS = /, | and /;
+const CSS_OVERLAY_BOX = "position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px";
+const ATTRIBUTE_DATA_PREV_ALT = "data-prev-alt";
+
+const EMOJI_FALLBACK = "∙";
+const EMOJI_MAP = {
   "1 person": "👤",
   "2 people": "👥",
   "3 people": "👥",
@@ -73,31 +80,26 @@ const emoji_map = {
   "twilight": "🌃",
   "water": "💧",
   "wedding": "💒"
-}
+};
 
 const show_facebook_cv_tags = function() {
-  const TAG_PREFIX = "Image may contain: ";
-  const images = [...document.getElementsByTagName('img')];
+  const images = [...document.images];
 
   images.forEach(function(el) {
-    if (el.hasAttribute("data-prev-alt") && el.getAttribute("data-prev-alt") === el.getAttribute("alt"))
+    if (el.hasAttribute(ATTRIBUTE_DATA_PREV_ALT) && el.getAttribute(ATTRIBUTE_DATA_PREV_ALT) === el.getAttribute("alt"))
       return;
 
-    el.setAttribute("data-prev-alt", el.alt);
+    el.setAttribute(ATTRIBUTE_DATA_PREV_ALT, el.alt);
 
     const altText = el.alt;
     const isCVTag = altText.startsWith(TAG_PREFIX);
 
     if (isCVTag) {
-      const tags = altText.slice(TAG_PREFIX.length).split(/, | and /);
-      let html = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
+      const tags = altText.slice(TAG_PREFIX.length).split(REGEX_SPLIT_TAGS);
+      let html = `<ul style="${CSS_OVERLAY_BOX}">`;
 
       tags.forEach(function(tag){
-        let prefix = "∙";
-
-        if (tag in emoji_map)
-          prefix = emoji_map[tag];
-
+        const prefix = tag in EMOJI_MAP ? EMOJI_MAP[tag] : EMOJI_FALLBACK;
         html += `<li>${prefix} ${tag}</li>`;
       });
 
