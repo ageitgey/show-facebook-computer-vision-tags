@@ -114,9 +114,9 @@ const detect_facebook_cv_tags = function() {
 };
 
 const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        detect_facebook_cv_tags();
-    });
+  mutations.forEach(function(mutation) {
+    detect_facebook_cv_tags();
+  });
 });
 
 const config = { attributes: true, childList: true, characterData: false }
