@@ -82,11 +82,15 @@ const EMOJI_MAP = {
   "wedding": "💒"
 };
 
+function alreadyHasOverlay(el) {
+  return el.hasAttribute(ATTRIBUTE_DATA_PREV_ALT) && el.getAttribute(ATTRIBUTE_DATA_PREV_ALT) === el.getAttribute("alt");
+}
+
 const show_facebook_cv_tags = function() {
   const images = [...document.images];
 
   images.forEach(function(el) {
-    if (el.hasAttribute(ATTRIBUTE_DATA_PREV_ALT) && el.getAttribute(ATTRIBUTE_DATA_PREV_ALT) === el.getAttribute("alt"))
+    if (alreadyHasOverlay(el))
       return;
 
     el.setAttribute(ATTRIBUTE_DATA_PREV_ALT, el.alt);
