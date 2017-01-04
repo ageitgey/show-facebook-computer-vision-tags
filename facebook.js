@@ -75,6 +75,8 @@ const emoji_map = {
   "wedding": "💒"
 }
 
+const TAGS_DEFAULT_HTML = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
+
 const show_facebook_cv_tags = function() {
   const TAG_PREFIX = "Image may contain: ";
   const images = [...document.getElementsByTagName('img')];
@@ -90,7 +92,7 @@ const show_facebook_cv_tags = function() {
 
     if (isCVTag) {
       const tags = altText.slice(TAG_PREFIX.length).split(/, | and /);
-      let html = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
+      let html = TAGS_DEFAULT_HTML;
 
       tags.forEach(function(tag){
         let prefix = "∙";
