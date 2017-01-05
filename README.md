@@ -87,3 +87,17 @@ From the Add-ons website:
 # Press
 
 * [New York Magazine select/all - See What Facebook Thinks Is in Your Photos](http://nymag.com/selectall/2017/01/see-what-facebook-thinks-is-in-your-photos.html)
+* [Nylon - You Can Now See What Information Facebook Gathers From Your Photos](http://www.nylon.com/articles/information-facebook-gets-from-photos)
+* [Mashable - Curious about what Facebook thinks is in your photos? This extension shows you.](http://mashable.com/2017/01/05/chrome-extension-facebook-photos-tagging/)
+* [lifehacker - Show Facebook Computer Vision for Chrome Reveals Facebook's Hidden Photo Tags](http://lifehacker.com/show-facebook-computer-vision-for-chrome-reveals-facebo-1790716574)
+* [PetaPixel - This Chrome Add-On Shows You What Facebook ‘Sees’ In Your Photos](http://petapixel.com/2017/01/04/chrome-add-shows-facebook-sees-photos/)
+* [DigitalTrends - Browser Extension Unveils the Hidden Tags Facebook Gives Your Photos](http://www.digitaltrends.com/photography/browser-extension-facebook-photo-tags-hidden-shows/)
+* [Metro UK - The amount of data Facebook detects in a single photo upload is terrifying](http://metro.co.uk/2017/01/05/heres-how-much-data-facebook-can-take-from-just-one-of-your-uploaded-photos-6362804/)
+* [t3n - Was Facebooks KI auf euren Fotos erkennt: Diese Erweiterung zeigt es euch](http://t3n.de/news/facebook-ki-bilderkennung-chrome-781194/)
+* [BFM TV - Découvrez tout ce que Facebook sait de vous en analysant vos photos](http://hightech.bfmtv.com/internet/decouvrez-tout-ce-que-facebook-sait-de-vous-en-analysant-vos-photos-1076938.html)
+* [GQ France - Facebook affine son ciblage grâce à vos photos](http://www.gqmagazine.fr/pop-culture/news/articles/facebook-collecte-des-donnees-dans-vos-photos/49175)
+* [Meio Bit - Veja os objetos que a IA do Facebook reconhece em suas fotos](http://meiobit.com/357917/facebook-computer-vision-tags-inteligencia-artificial-reconhece-os-objetos-contidos-em-suas-fotos-saiba-o-que-ele-entende/)
+* [CodigoFonte - Plugin para Firefox e Chrome exibe o que o Facebook vê em suas fotos](http://codigofonte.uol.com.br/noticias/plugin-para-firefox-e-chrome-exibe-o-que-o-facebook-ve-em-suas-fotos)
+* [24h.com.vn - Facebook đang phân tích từng bức ảnh ra sao?](http://us.24h.com.vn/cong-nghe-thong-tin/facebook-dang-phan-tich-tung-buc-anh-ra-sao-c55a845636.html)
+* [ZDNet Korea - 브라우저에 페이스북의 눈을 달아보자](http://www.zdnet.co.kr/news/news_view.asp?artice_id=20170105100124)
+* [unwire.hk - 表情動作場合都辨認到！加個插件即可看到 Facebook 圖像識別技術到底有幾犀利](https://unwire.hk/2017/01/05/show-facebook-computer-vision-tags/software/)
