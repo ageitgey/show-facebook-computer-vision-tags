@@ -82,7 +82,6 @@ const show_facebook_cv_tags = function(obj) {
   const TAG_PREFIX = "Image may contain: ";
   let images = [...obj.querySelectorAll('img.img')];
   images = images.concat([...obj.querySelectorAll('img.spotlight')]);
-  // console.log(images);
   images.forEach(function(el) {
     if (el.hasAttribute("data-prev-alt") && el.getAttribute("data-prev-alt") === el.getAttribute("alt"))
       return;
