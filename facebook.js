@@ -78,7 +78,7 @@ const emoji_map = {
   "wedding": "💒"
 }
 
-const show_facebook_cv_tags = function(obj) {
+function show_facebook_cv_tags(obj) {
   const TAG_PREFIX = "Image may contain: ";
   let images = [...obj.querySelectorAll('img.img')];
   images = images.concat([...obj.querySelectorAll('img.spotlight')]);
