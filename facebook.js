@@ -1,87 +1,96 @@
 const emoji_map = {
-  "1 person": "👤",
-  "2 people": "👥",
-  "3 people": "👥",
-  "4 people": "👥",
-  "5 people": "👥",
-  "6 people": "👥",
-  "7 people": "👥",
-  "airplane": "✈️",
-  "baby": "🍼",
-  "beach": "🏖",
-  "beard": "👴",
+  "1 persona": "👤",
+  "2 persone": "👥",
+  "3 persone": "👥",
+  "4 persone": "👥",
+  "5 persone": "👥",
+  "6 persone": "👥",
+  "7 persone": "👥",
+  "aereo": "✈️",
+  "bambino": "🍼",
+  "spiaggia": "🏖",
+  "barba": "👴",
   "bedroom": "🛏",
   "bicycle": "🚲",
   "camera": "📷",
   "car": "🚗",
-  "cat": "😺",
+  "gatto": "😺",
   "child": "👦",
-  "christmas tree": "🎄",
-  "close-up": "👀",
-  "closeup": "👀",
-  "cloud": "☁️",
+  "albero di Natale": "🎄",
+  "primopiano": "👀",
+  "primo piano": "👀",
+  "nuvola": "☁️",
   "concert": "🎤",
-  "crowd": "👥",
+  "folla": "👥",
   "dancing": "💃",
   "dessert": "🍰",
   "dog": "🐶",
-  "drink": "🍹",
+  "bevanda": "🍹",
   "eating": "🍽",
   "eyeglasses": "👓",
   "fireworks": "🎆",
-  "flower": "🌻",
-  "food": "🍎",
-  "glasses": "🕶",
+  "fiore": "🌻",
+  "cibo": "🍎",
+  "occhiali": "🕶",
   "golf": "🏌️‍",
-  "grass": "🍃",
-  "hat": "👒",
-  "indoor": "🏠",
+  "erba": "🍃",
+  "cappello": "👒",
+  "spazio al chiuso": "🏠",
   "living room": "🏠",
   "meme": "👍",
   "motorcycle": "🏍",
-  "mountain": "🌋",
-  "nature": "🏞",
-  "night": "🌃",
-  "ocean": "🌊",
-  "office": "💼",
-  "one or more people": "👥",
-  "outdoor": "🚵",
-  "people eating": "🍽",
+  "montagna": "🌋",
+  "natura": "🏞",
+  "notte": "🌃",
+  "oceano": "🌊",
+  "ufficio": "💼",
+  "una o più persone": "👥",
+  "spazio all\'aperto": "🚵",
+  "persone che mangiano": "🍽",
+  "persona che mangia": "🍽",
   "people on stage": "🎤",
   "people playing musical instruments": "🎸",
   "people playing sport": "🏀",
-  "people sitting": "⑁",
-  "people smiling": "😂",
-  "people standing": "🕴",
-  "phone": "📱",
-  "plant": "🌿",
+  "persone sedute": "⑁",
+  "persona seduta": "⑁",
+  "persone che sorridono": "😂",
+  "persone in piedi": "🕴",
+  "persona in piedi": "🕴",
+  "persone che camminano": "🚶",
+  "persona che cammina": "🚶",
+  "telefono": "📱",
+  "pianta": "🌿",
   "playing a musical instrument": "🎸",
-  "screen": "🖥",
+  "schermo": "🖥",
   "selfie": "🤳",
-  "shoes": "👡",
+  "scarpe": "👡",
   "sitting": "⑁",
-  "sky": "☀️",
-  "skyscraper": "🏙",
+  "cielo": "☀️",
+  "grattacielo": "🏙",
   "sleeping": "😴",
-  "smiling": "😋",
-  "snow": "❄️",
-  "standing": "🕴",
-  "stripes": "📶",
+  "con sorriso": "😋",
+  "neve": "❄️",
+  "in piedi": "🕴",
+  "strisce": "📶",
   "suit": "🕴",
   "sunglasses": "🕶",
   "swimming": "🏊",
-  "table": "🍽",
+  "tavolo": "🍽",
   "text": "🔠",
-  "tree": "🌴",
-  "twilight": "🌃",
-  "water": "💧",
-  "wedding": "💒"
+  "sMS": "🔠",
+  "albero": "🌴",
+  "crepuscolo": "🌃",
+  "acqua": "💧",
+  "matrimonio": "💒",
+  "ponte": "🌁",
+  "gioielli":"💎"
 }
 
-const show_facebook_cv_tags = function() {
-  const TAG_PREFIX = "Image may contain: ";
-  const images = [...document.getElementsByTagName('img')];
-
+const show_facebook_cv_tags = function(obj) {
+  const TAG_PREFIX = "L\'immagine può contenere: ";
+  let images = [...obj.querySelectorAll('img.img')];
+  images = images.concat([...obj.querySelectorAll('img.spotlight')]);
+  // console.log(images);
   images.forEach(function(el) {
     if (el.hasAttribute("data-prev-alt") && el.getAttribute("data-prev-alt") === el.getAttribute("alt"))
       return;
@@ -92,7 +101,7 @@ const show_facebook_cv_tags = function() {
     const isCVTag = altText.startsWith(TAG_PREFIX);
 
     if (isCVTag) {
-      const tags = altText.slice(TAG_PREFIX.length).split(/, | and /);
+      const tags = altText.slice(TAG_PREFIX.length).split(/, | e /);
       let html = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
 
       tags.forEach(function(tag){
@@ -114,12 +123,12 @@ const show_facebook_cv_tags = function() {
 
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
-        show_facebook_cv_tags();
+        setTimeout(function(){show_facebook_cv_tags(mutation.target);},1500);
     });
 });
 
-const config = { attributes: true, childList: true, characterData: false }
+const config = { attributes: true, childList: true, characterData: true, attributeFilter: ["src"], subtree: true }
 
 observer.observe(document.body, config);
 
-show_facebook_cv_tags();
+show_facebook_cv_tags(document);
