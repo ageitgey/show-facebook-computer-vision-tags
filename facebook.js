@@ -1,13 +1,9 @@
 const emoji_map = {
   "1 person": "👤",
   "2 people": "👥",
-  "3 people": "👥",
-  "4 people": "👥",
-  "5 people": "👥",
-  "6 people": "👥",
-  "7 people": "👥",
   "airplane": "✈️",
   "baby": "🍼",
+  "baseball": "⚾️",
   "beach": "🏖",
   "beard": "👴",
   "bedroom": "🛏",
@@ -28,6 +24,7 @@ const emoji_map = {
   "drink": "🍹",
   "eating": "🍽",
   "eyeglasses": "👓",
+  "fire": "🔥",
   "fireworks": "🎆",
   "flower": "🌻",
   "food": "🍎",
@@ -36,6 +33,7 @@ const emoji_map = {
   "grass": "🍃",
   "hat": "👒",
   "indoor": "🏠",
+  "laptop": "💻",
   "living room": "🏠",
   "meme": "👍",
   "motorcycle": "🏍",
@@ -65,6 +63,7 @@ const emoji_map = {
   "sleeping": "😴",
   "smiling": "😋",
   "snow": "❄️",
+  "stadium": "🏟",
   "standing": "🕴",
   "stripes": "📶",
   "suit": "🕴",
@@ -98,8 +97,11 @@ const show_facebook_cv_tags = function() {
       tags.forEach(function(tag){
         let prefix = "∙";
 
-        if (tag in emoji_map)
+        if (tag in emoji_map) {
           prefix = emoji_map[tag];
+        } else if (tag.endsWith('people')) {
+          prefix = emoji_map['2 people'];
+        }
 
         html += `<li>${prefix} ${tag}</li>`;
       });
