@@ -49,6 +49,7 @@ const emoji_map = {
   "people playing musical instruments": "🎸",
   "people playing sport": "🏀",
   "people sitting": "⑁",
+  "people sleeping": "💤",
   "people smiling": "😂",
   "people standing": "🕴",
   "phone": "📱",
