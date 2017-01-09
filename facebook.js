@@ -81,6 +81,7 @@ const emoji_map = {
 const show_facebook_cv_tags = function() {
   const TAG_PREFIX = "Image may contain: ";
   const images = [...document.getElementsByTagName('img')];
+  const mediaThumbs = [...document.querySelectorAll('a.uiMediaThumb')];
 
   images.forEach(function(el) {
     if (el.hasAttribute("data-prev-alt") && el.getAttribute("data-prev-alt") === el.getAttribute("alt"))
@@ -103,6 +104,35 @@ const show_facebook_cv_tags = function() {
         } else if (tag.endsWith('people')) {
           prefix = emoji_map['2 people'];
         }
+
+        html += `<li>${prefix} ${tag}</li>`;
+      });
+
+      html += "</ul>";
+
+      el.style.position = 'relative';
+      el.insertAdjacentHTML('afterend', html);
+    }
+  });
+
+  mediaThumbs.forEach(function(el) {
+    if (el.hasAttribute("data-prev-aria-label") && el.getAttribute("data-prev-aria-label") === el.getAttribute("alt"))
+      return;
+
+    el.setAttribute("data-prev-aria-label", el.attributes['aria-label'].value);
+
+    const ariaLabelText = el.attributes['aria-label'].value;
+    const isCVTag = ariaLabelText.startsWith(TAG_PREFIX);
+
+    if (isCVTag) {
+      const tags = ariaLabelText.slice(TAG_PREFIX.length).split(/, | and /);
+      let html = "<ul style='z-index: 2;position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
+
+      tags.forEach(function(tag){
+        let prefix = "∙";
+
+        if (tag in emoji_map)
+          prefix = emoji_map[tag];
 
         html += `<li>${prefix} ${tag}</li>`;
       });
