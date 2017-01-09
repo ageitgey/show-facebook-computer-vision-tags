@@ -1,3 +1,19 @@
+// ==UserScript==
+// @name         Show Facebook Computer Vision Tags
+// @namespace    https://www.github.com/ageitgey/show-facebook-computer-vision-tags
+// @description  Shows what Facebook thinks your pictures contain
+// @author       Adam Geitgey
+// @version      0.0.1
+// @license      https://raw.githubusercontent.com/ageitgey/show-facebook-computer-vision-tags/master/LICENSE
+// @icon         https://raw.githubusercontent.com/ageitgey/show-facebook-computer-vision-tags/master/logo128.png
+// @downloadURL  https://raw.githubusercontent.com/ageitgey/show-facebook-computer-vision-tags/master/facebook.js
+// @match        http://www.facebook.com/*
+// @match        https://www.facebook.com/*
+// @grant        none
+// @run-at       document-idle
+// @noframes
+// ==/UserScript==
+
 const emoji_map = {
   "1 person": "👤",
   "2 people": "👥",
