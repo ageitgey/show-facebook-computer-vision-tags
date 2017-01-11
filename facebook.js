@@ -50,6 +50,7 @@ const emoji_map = {
   "people playing sport": "🏀",
   "people sitting": "⑁",
   "people smiling": "😊",
+  "people sleeping": "💤",
   "people standing": "🕴",
   "phone": "📱",
   "plant": "🌿",
