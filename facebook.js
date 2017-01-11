@@ -1,85 +1,45 @@
-const emoji_map = {
-  "1 person": "👤",
-  "2 people": "👥",
-  "airplane": "✈️",
-  "baby": "🍼",
-  "baseball": "⚾️",
-  "beach": "🏖",
-  "beard": "👴",
-  "bedroom": "🛏",
-  "bicycle": "🚲",
-  "camera": "📷",
-  "car": "🚗",
-  "cat": "😺",
-  "child": "👦",
-  "christmas tree": "🎄",
-  "close-up": "👀",
-  "closeup": "👀",
-  "cloud": "☁️",
-  "concert": "🎤",
-  "crowd": "👥",
-  "dancing": "💃",
-  "dessert": "🍰",
-  "dog": "🐶",
-  "drink": "🍹",
-  "eating": "🍽",
-  "eyeglasses": "👓",
-  "fire": "🔥",
-  "fireworks": "🎆",
-  "flower": "🌻",
-  "food": "🍎",
-  "glasses": "🕶",
-  "golf": "🏌️‍",
-  "grass": "🍃",
-  "hat": "👒",
-  "indoor": "🏠",
-  "laptop": "💻",
-  "living room": "🏠",
-  "meme": "👍",
-  "motorcycle": "🏍",
-  "mountain": "🌋",
-  "nature": "🏞",
-  "night": "🌃",
-  "ocean": "🌊",
-  "office": "💼",
-  "one or more people": "👥",
-  "outdoor": "🚵",
-  "people eating": "🍽",
-  "people on stage": "🎤",
-  "people playing musical instruments": "🎸",
-  "people playing sport": "🏀",
-  "people sitting": "⑁",
-  "people sleeping": "💤",
-  "people smiling": "😂",
-  "people standing": "🕴",
-  "phone": "📱",
-  "plant": "🌿",
-  "playing a musical instrument": "🎸",
-  "screen": "🖥",
-  "selfie": "🤳",
-  "shoes": "👡",
-  "sitting": "⑁",
-  "sky": "☀️",
-  "skyscraper": "🏙",
-  "sleeping": "😴",
-  "smiling": "😋",
-  "snow": "❄️",
-  "stadium": "🏟",
-  "standing": "🕴",
-  "stripes": "📶",
-  "suit": "🕴",
-  "sunglasses": "🕶",
-  "swimming": "🏊",
-  "table": "🍽",
-  "text": "🔠",
-  "tree": "🌴",
-  "twilight": "🌃",
-  "water": "💧",
-  "wedding": "💒"
+var locale = (Array.from(document.body.classList).find(cls => cls.match(/^Locale_/)));
+let emoji_map = {};
+var TAG_PREFIX;
+  var xhr = new XMLHttpRequest();
+if (locale == 'Locale_es_LA') {
+ TAG_PREFIX = "La imagen puede contener: ";
+xhr.open('GET', chrome.extension.getURL('/locales/es/messages.txt'), true);
+xhr.onreadystatechange = function()
+{
+    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
+    {
+      emoji_map = JSON.parse(xhr.responseText);
+    }
+};
+xhr.send();
+}
+ else if (locale == 'Locale_de_DE') {
+  TAG_PREFIX = "Bild könnte enthalten: ";
+  xhr.open('GET', chrome.extension.getURL('/locales/de/messages.txt'), true);
+  xhr.onreadystatechange = function()
+  {
+    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
+    {
+      emoji_map = JSON.parse(xhr.responseText);
+    }
+  };
+  xhr.send();
+} else if(locale == 'Locale_en_US') {
+   TAG_PREFIX = "Image may contain: ";
+xhr.open('GET', chrome.extension.getURL('/locales/en_US/messages.txt'), true);
+xhr.onreadystatechange = function()
+{
+    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
+    {
+      emoji_map = JSON.parse(xhr.responseText);
+    }
+};
+xhr.send();
 }
 
 const show_facebook_cv_tags = function() {
-  const TAG_PREFIX = "Image may contain: ";
+
   const images = [...document.getElementsByTagName('img')];
 
   images.forEach(function(el) {
