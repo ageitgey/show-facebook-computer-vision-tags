@@ -1,67 +1,35 @@
-var locale = (Array.from(document.body.classList).find(cls => cls.match(/^Locale_/)));
-let emoji_map = {};
-var TAG_PREFIX;
-  var xhr = new XMLHttpRequest();
-if (locale == 'Locale_es_LA') {
- TAG_PREFIX = "La imagen puede contener: ";
-xhr.open('GET', chrome.extension.getURL('/locales/es/messages.txt'), true);
-xhr.onreadystatechange = function()
-{
-    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
-    {
-      emoji_map = JSON.parse(xhr.responseText);
-    }
-};
-xhr.send();
-}
- else if (locale == 'Locale_de_DE') {
-  TAG_PREFIX = "Bild könnte enthalten: ";
-  xhr.open('GET', chrome.extension.getURL('/locales/de/messages.txt'), true);
-  xhr.onreadystatechange = function()
-  {
-    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
-    {
-      emoji_map = JSON.parse(xhr.responseText);
-    }
-  };
-  xhr.send();
-} else if(locale == 'Locale_en_US') {
-   TAG_PREFIX = "Image may contain: ";
-xhr.open('GET', chrome.extension.getURL('/locales/en_US/messages.txt'), true);
-xhr.onreadystatechange = function()
-{
-    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
-    {
-      emoji_map = JSON.parse(xhr.responseText);
-    }
-};
-xhr.send();
-}
+const locale = (Array.from(document.body.classList).find(cls => cls.match(/^Locale_/)));
 
-const show_facebook_cv_tags = function() {
-
+/**
+ * Update CV tags
+ * @param localeData
+ */
+const show_facebook_cv_tags = function (localeData) {
   const images = [...document.getElementsByTagName('img')];
+  const localeRegex = new RegExp(localeData.separator_regex, 'i');
 
-  images.forEach(function(el) {
-    if (el.hasAttribute("data-prev-alt") && el.getAttribute("data-prev-alt") === el.getAttribute("alt"))
+  images.forEach(function (el) {
+    if (el.hasAttribute("data-prev-alt")
+      && el.getAttribute("data-prev-alt") === el.getAttribute("alt")) {
       return;
+    }
 
     el.setAttribute("data-prev-alt", el.alt);
 
     const altText = el.alt;
-    const isCVTag = altText.startsWith(TAG_PREFIX);
+    const isCVTag = altText.startsWith(localeData.tag_prefix);
 
     if (isCVTag) {
-      const tags = altText.slice(TAG_PREFIX.length).split(/, | and /);
+      const tags = altText.slice(localeData.tag_prefix.length).split(localeRegex);
       let html = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
 
-      tags.forEach(function(tag){
+      tags.forEach(function (tag) {
         let prefix = "∙";
 
-        if (tag in emoji_map) {
-          prefix = emoji_map[tag];
-        } else if (tag.endsWith('people')) {
-          prefix = emoji_map['2 people'];
+        if (tag in localeData.emoji_map) {
+          prefix = localeData.emoji_map[tag];
+        } else if (tag.endsWith(localeData.tag_ends_with)) {
+          prefix = localeData.emoji_map[localeData.tag_ends_with_map];
         }
 
         html += `<li>${prefix} ${tag}</li>`;
@@ -75,14 +43,52 @@ const show_facebook_cv_tags = function() {
   });
 };
 
-const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-        show_facebook_cv_tags();
+/**
+ * Initialize the plugin
+ * @param localeData
+ */
+const initializePlugin = function (localeData) {
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      show_facebook_cv_tags(localeData);
     });
-});
+  });
 
-const config = { attributes: true, childList: true, characterData: false }
+  const config = {attributes: true, childList: true, characterData: false};
+  observer.observe(document.body, config);
 
-observer.observe(document.body, config);
+  show_facebook_cv_tags(localeData);
+};
 
-show_facebook_cv_tags();
+
+/**
+ * Make the fetch request to get locale data
+ * @param localePath
+ */
+const makeLocaleRequest = function (localePath) {
+  fetch(chrome.extension.getURL(localePath)).then(function (response) {
+    response.json().then(function (data) {
+      initializePlugin(data);
+    }).catch(function (err) {
+      console.error('FB COMPUTER VISION TAGS ERROR', err);
+    });
+  }).catch(function (err) {
+    console.error('FB COMPUTER VISION TAGS ERROR', err);
+  });
+};
+
+/**
+ * Check for locale
+ */
+if (locale === 'Locale_es_LA') {
+  makeLocaleRequest('/locales/es/messages.json');
+
+} else if (locale === 'Locale_de_DE') {
+  makeLocaleRequest('/locales/de/messages.json');
+
+} else if (locale === 'Locale_en_US') {
+  makeLocaleRequest('/locales/en_US/messages.json');
+
+} else if (locale === 'Locale_fr_FR') {
+  makeLocaleRequest('/locales/fr/messages.json');
+}
