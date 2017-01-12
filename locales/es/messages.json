@@ -1,16 +1,11 @@
 {
   "tag_prefix": "La imagen puede contener: ",
   "separator_regex": ", | and ",
-  "tag_ends_with": "people",
-  "tag_ends_with_map": "2 people",
+  "tag_ends_with": "personas",
+  "tag_ends_with_map": "2 personas",
   "emoji_map": {
     "una persona": "👤",
     "2 personas": "👥",
-    "3 personas": "👥",
-    "4 personas": "👥",
-    "5 personas": "👥",
-    "6 personas": "👥",
-    "7 personas": "👥",
     "bebé": "🍼",
     "playa": "👙",
     "barba": "👴",

@@ -66,15 +66,12 @@ const initializePlugin = function (localeData) {
  * @param localePath
  */
 const makeLocaleRequest = function (localePath) {
-  fetch(chrome.extension.getURL(localePath)).then(function (response) {
-    response.json().then(function (data) {
-      initializePlugin(data);
-    }).catch(function (err) {
+  fetch(chrome.extension.getURL(localePath))
+    .then(response => response.json())
+    .then(data => initializePlugin(data))
+    .catch(function (err) {
       console.error('FB COMPUTER VISION TAGS ERROR', err);
     });
-  }).catch(function (err) {
-    console.error('FB COMPUTER VISION TAGS ERROR', err);
-  });
 };
 
 /**
@@ -82,13 +79,10 @@ const makeLocaleRequest = function (localePath) {
  */
 if (locale === 'Locale_es_LA') {
   makeLocaleRequest('/locales/es/messages.json');
-
 } else if (locale === 'Locale_de_DE') {
   makeLocaleRequest('/locales/de/messages.json');
-
-} else if (locale === 'Locale_en_US') {
+} else if (locale === 'Locale_en_GB' || locale === 'Locale_en_US') {
   makeLocaleRequest('/locales/en_US/messages.json');
-
 } else if (locale === 'Locale_fr_FR') {
   makeLocaleRequest('/locales/fr/messages.json');
 }
