@@ -73,9 +73,17 @@ Option 2: From Source
 
 # Installing in Firefox
 
-From the Add-ons website:
+Option 1: From the Add-ons website:
 
 1. [Click here and choose "+ Add to Firefox"](https://addons.mozilla.org/en-US/firefox/addon/show-computer-vision-tags/)
+
+Option 2: From Source
+
+1. Clone this repo so you have a copy in a folder locally.
+1. Open `about:debugging` URL
+1. Click on the button labelled `Load Temporary Add-on`.
+1. Select the directory where you cloned this repo to, and select `facebook.js`
+1. Visit Facebook!
 
 # Caveats
 
