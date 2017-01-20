@@ -5,21 +5,20 @@ const locale = (Array.from(document.body.classList).find(cls => cls.match(/^Loca
  * @param localeData
  */
 const show_facebook_cv_tags = function(localeData) {
-  const images = [...document.getElementsByTagName('img')];
-  const localeRegex = new RegExp(localeData.separator_regex, 'i');
+  const images = [...document.querySelectorAll(`img[alt^="${localeData.tag_prefix}"]`)];
 
-  images.forEach(el => {
-    if (el.hasAttribute('data-prev-alt') &&
-      el.getAttribute('data-prev-alt') === el.getAttribute('alt')) {
-      return;
-    }
+  if (images.length > 0) {
+    const localeRegex = new RegExp(localeData.separator_regex, 'i');
 
-    el.setAttribute('data-prev-alt', el.alt);
+    images.forEach(el => {
+      if (el.hasAttribute('data-prev-alt') &&
+        el.getAttribute('data-prev-alt') === el.getAttribute('alt')) {
+        return;
+      }
 
-    const altText = el.alt;
-    const isCVTag = altText.startsWith(localeData.tag_prefix);
+      el.setAttribute('data-prev-alt', el.alt);
 
-    if (isCVTag) {
+      const altText = el.alt;
       const tags = altText.slice(localeData.tag_prefix.length).split(localeRegex);
       let html = '<ul class="sfcvt">';
 
@@ -39,8 +38,8 @@ const show_facebook_cv_tags = function(localeData) {
 
       el.style.position = 'relative';
       el.insertAdjacentHTML('afterend', html);
-    }
-  });
+    });
+  }
 };
 
 /**
