@@ -1,6 +1,6 @@
 {
   "tag_prefix": "Trong hình ảnh có thể có: ",
-  "separator_regex": ", | and ",
+  "separator_regex": ", | và ",
   "tag_ends_with": "người",
   "tag_ends_with_map": "2 người",
   "emoji_map": {
