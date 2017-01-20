@@ -8,7 +8,7 @@ const show_facebook_cv_tags = function(localeData) {
   const images = [...document.getElementsByTagName('img')];
   const localeRegex = new RegExp(localeData.separator_regex, 'i');
 
-  images.forEach(function(el) {
+  images.forEach(el => {
     if (el.hasAttribute('data-prev-alt') &&
       el.getAttribute('data-prev-alt') === el.getAttribute('alt')) {
       return;
@@ -48,8 +48,8 @@ const show_facebook_cv_tags = function(localeData) {
  * @param localeData
  */
 const initializePlugin = function(localeData) {
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
       show_facebook_cv_tags(localeData);
     });
   });
@@ -73,7 +73,7 @@ const makeLocaleRequest = function(localePath) {
   fetch(chrome.extension.getURL(localePath))
     .then(response => response.json())
     .then(data => initializePlugin(data))
-    .catch(function(err) {
+    .catch(err => {
       console.error('FB COMPUTER VISION TAGS ERROR', err);
     });
 };
