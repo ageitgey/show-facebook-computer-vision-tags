@@ -87,4 +87,6 @@ if (locale === 'Locale_es_LA') {
   makeLocaleRequest('/locales/fr/messages.json');
 } else if (locale === 'Locale_it_IT') {
   makeLocaleRequest('/locales/it_IT/messages.json');
+} else if (locale === 'Locale_vi_VN') {
+  makeLocaleRequest('/locales/vi_VN/messages.json');
 }
