@@ -4,13 +4,13 @@ const locale = (Array.from(document.body.classList).find(cls => cls.match(/^Loca
  * Update CV tags
  * @param localeData
  */
-const show_facebook_cv_tags = function (localeData) {
+const show_facebook_cv_tags = function(localeData) {
   const images = [...document.getElementsByTagName('img')];
   const localeRegex = new RegExp(localeData.separator_regex, 'i');
 
-  images.forEach(function (el) {
-    if (el.hasAttribute("data-prev-alt")
-      && el.getAttribute("data-prev-alt") === el.getAttribute("alt")) {
+  images.forEach(function(el) {
+    if (el.hasAttribute("data-prev-alt") &&
+      el.getAttribute("data-prev-alt") === el.getAttribute("alt")) {
       return;
     }
 
@@ -23,7 +23,7 @@ const show_facebook_cv_tags = function (localeData) {
       const tags = altText.slice(localeData.tag_prefix.length).split(localeRegex);
       let html = "<ul style='position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px'>";
 
-      tags.forEach(function (tag) {
+      tags.forEach(function(tag) {
         let prefix = "∙";
 
         if (tag in localeData.emoji_map) {
@@ -47,14 +47,18 @@ const show_facebook_cv_tags = function (localeData) {
  * Initialize the plugin
  * @param localeData
  */
-const initializePlugin = function (localeData) {
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
+const initializePlugin = function(localeData) {
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
       show_facebook_cv_tags(localeData);
     });
   });
 
-  const config = {attributes: true, childList: true, characterData: false};
+  const config = {
+    attributes: true,
+    childList: true,
+    characterData: false
+  };
   observer.observe(document.body, config);
 
   show_facebook_cv_tags(localeData);
@@ -65,11 +69,11 @@ const initializePlugin = function (localeData) {
  * Make the fetch request to get locale data
  * @param localePath
  */
-const makeLocaleRequest = function (localePath) {
+const makeLocaleRequest = function(localePath) {
   fetch(chrome.extension.getURL(localePath))
     .then(response => response.json())
     .then(data => initializePlugin(data))
-    .catch(function (err) {
+    .catch(function(err) {
       console.error('FB COMPUTER VISION TAGS ERROR', err);
     });
 };
