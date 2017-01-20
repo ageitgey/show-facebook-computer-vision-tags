@@ -21,7 +21,7 @@ const show_facebook_cv_tags = function(localeData) {
 
     if (isCVTag) {
       const tags = altText.slice(localeData.tag_prefix.length).split(localeRegex);
-      let html = '<ul style="position:absolute;top:10px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:rgba(0,0,0,0.7);color:#fff;border-radius:5px">';
+      let html = '<ul class="sfcvt">';
 
       tags.forEach(function(tag) {
         let prefix = '∙';
@@ -49,9 +49,7 @@ const show_facebook_cv_tags = function(localeData) {
  */
 const initializePlugin = function(localeData) {
   const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      show_facebook_cv_tags(localeData);
-    });
+    mutations.forEach(mutation => show_facebook_cv_tags(localeData));
   });
 
   const config = {
@@ -73,9 +71,7 @@ const makeLocaleRequest = function(localePath) {
   fetch(chrome.extension.getURL(localePath))
     .then(response => response.json())
     .then(data => initializePlugin(data))
-    .catch(err => {
-      console.error('FB COMPUTER VISION TAGS ERROR', err);
-    });
+    .catch(err => console.error('FB COMPUTER VISION TAGS ERROR', err));
 };
 
 /**
