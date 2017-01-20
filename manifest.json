@@ -4,21 +4,20 @@
   "author": "Adam Geitgey",
   "manifest_version": 2,
   "description": "Shows what Facebook thinks your pictures contain",
+  "homepage_url": "https://github.com/ageitgey/show-facebook-computer-vision-tags",
   "permissions": [
     "http://www.facebook.com/*", "https://www.facebook.com/*"
   ],
-  "web_accessible_resources": [ "locales/*"],
+  "web_accessible_resources": ["locales/*"],
   "icons": {
-     "128": "logo128.png",
-     "16": "logo16.png",
-     "48": "logo48.png"
+    "128": "logo128.png",
+    "16": "logo16.png",
+    "48": "logo48.png"
   },
-  "content_scripts": [
-    {
-        "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
-        "js" : ["facebook.js"],
-        "run_at" : "document_idle",
-        "all_frames" : false
-    }
-  ]
+  "content_scripts": [{
+    "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"],
+    "js": ["facebook.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }]
 }
