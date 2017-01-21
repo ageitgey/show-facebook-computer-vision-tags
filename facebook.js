@@ -1,4 +1,4 @@
-const locale = (Array.from(document.body.classList).find(cls => cls.match(/^Locale_/)));
+const locale = (Array.from(document.body.classList).find(cls => /^Locale_/.test(cls)));
 
 /**
  * Update CV tags
@@ -39,8 +39,30 @@ const show_facebook_cv_tags = function(localeData) {
 
       el.style.position = 'relative';
       el.insertAdjacentHTML('afterend', html);
+
+      const parrent = el.parentNode.parentNode;
+      parrent.addEventListener('mouseover', hide);
+      parrent.addEventListener('mouseout', show);
     }
   });
+};
+
+/**
+ * Show the element
+ */
+const show = function() {
+  const el = this.querySelector('ul.sfcvt');
+  if (el !== null)
+    el.style.display = 'block';
+};
+
+/**
+ * Hide the element
+ */
+const hide = function() {
+  const el = this.querySelector('ul.sfcvt');
+  if (el !== null)
+    el.style.display = 'none';
 };
 
 /**
