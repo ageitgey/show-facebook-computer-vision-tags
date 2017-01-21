@@ -23,7 +23,7 @@ const show_facebook_cv_tags = function(localeData) {
       const tags = altText.slice(localeData.tag_prefix.length).split(localeRegex);
       let html = '<ul class="sfcvt">';
 
-      tags.forEach(function(tag) {
+      tags.forEach(tag => {
         let prefix = '∙';
 
         if (tag in localeData.emoji_map) {
