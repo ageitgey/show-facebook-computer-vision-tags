@@ -40,9 +40,9 @@ const show_facebook_cv_tags = function(localeData) {
       el.style.position = 'relative';
       el.insertAdjacentHTML('afterend', html);
 
-      const parrent = el.parentNode.parentNode;
-      parrent.addEventListener('mouseover', hide);
-      parrent.addEventListener('mouseout', show);
+      const parent = el.parentNode.parentNode;
+      parent.addEventListener('mouseover', hide);
+      parent.addEventListener('mouseout', show);
     }
   });
 };
