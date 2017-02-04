@@ -1,6 +1,6 @@
 {
   "tag_prefix": "Bild könnte enthalten: ",
-  "separator_regex": ", | and ",
+  "separator_regex": ", (?!die)| und ",
   "emoji_map": {
     "1 Person": "👤",
     "2 Personen": "👥",
@@ -18,8 +18,8 @@
     "Kind": "👦",
     "Weihnachtsbaum": "🎄",
     "Nahaufnahme": "👀",
-    "Wolke": "☁️",
-    "Wolken": "☁️",
+    "Wolke": "☁",
+    "Wolken": "☁",
     "Menschenmasse": "👥",
     "Hund": "🐶",
     "trinken": "🍹",
@@ -69,6 +69,18 @@
     "Text": "🔠",
     "Baum": "🌴",
     "Dämmerung": "🌃",
-    "Wasser": "💧"
+    "Wasser": "💧",
+    "Bildschirm": "📺",
+    "Baskettballplatz": "🏀",
+    "Basketballplatz": "🏀",
+    "Katze": "🐱",
+    "Stadion": "🏟",
+    "Flugzeug": "✈",
+    "Personen, die tanzen": "💃",
+    "isst": "🍽",
+    "Haus": "🏠",
+    "Shorts": "👖",
+    "Sportler": "🏃",
+    "machen Sport": "🏃"
   }
 }
