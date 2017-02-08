@@ -89,4 +89,6 @@ if (locale === 'Locale_es_LA') {
   makeLocaleRequest('/locales/it_IT/messages.json');
 } else if (locale === 'Locale_vi_VN') {
   makeLocaleRequest('/locales/vi_VN/messages.json');
+} else if (locale === 'Locale_th_TH') {
+  makeLocaleRequest('/locales/th_TH/messages.json');
 }
