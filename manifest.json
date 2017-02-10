@@ -6,7 +6,7 @@
   "description": "Shows what Facebook thinks your pictures contain",
   "homepage_url": "https://github.com/ageitgey/show-facebook-computer-vision-tags",
   "permissions": [
-    "http://www.facebook.com/*", "https://www.facebook.com/*", "https://web.facebook.com/*"
+    "http://www.facebook.com/*", "https://www.facebook.com/*", "https://facebook.com/*"
   ],
   "web_accessible_resources": ["locales/*"],
   "icons": {
@@ -15,7 +15,7 @@
     "48": "logo48.png"
   },
   "content_scripts": [{
-    "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*", "https://web.facebook.com/*"],
+    "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*", "https://facebook.com/*"],
     "css": ["facebook.css"],
     "js": ["facebook.js"],
     "run_at": "document_idle",
