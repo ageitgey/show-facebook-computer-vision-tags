@@ -46,8 +46,8 @@
     "im Freien": "🚵",
     "Personen, die tanzen": "💃",
     "Personen, die essen": "🍽",
-    "Personen, die lachen": "😄",
     "Personen auf einer Bühne": "🎤",
+    "Personen, die lachen": "😄",
     "Personen, die sitzen": "⑁",
     "Personen, die lächeln": "😊",
     "Personen, die stehen": "🕴",
@@ -93,6 +93,9 @@
     "Gitarre": "🎸",
     "auf einer Bühne": "🎤",
     "Kaffee": "☕",
-    "Kaffeekocher": "☕"
+    "Kaffeekocher": "☕",
+    "Motorrad": "🏍",
+    "Spazieren": "🚶",
+    "Pferd": "🐎"
   }
 }
