@@ -1,4 +1,4 @@
-const locale = (Array.from(document.body.classList).find(cls => cls.match(/^Locale_/)));
+const locale = (Array.from(document.body.classList).find(cls => /^Locale_/.test(cls)));
 
 /**
  * Update CV tags
@@ -23,7 +23,7 @@ const show_facebook_cv_tags = function(localeData) {
       const tags = altText.slice(localeData.tag_prefix.length).split(localeRegex);
       let html = '<ul class="sfcvt">';
 
-      tags.forEach(function(tag) {
+      tags.forEach(tag => {
         let prefix = '∙';
 
         if (tag in localeData.emoji_map) {
@@ -39,8 +39,30 @@ const show_facebook_cv_tags = function(localeData) {
 
       el.style.position = 'relative';
       el.insertAdjacentHTML('afterend', html);
+
+      const parent = el.parentNode.parentNode;
+      parent.addEventListener('mouseover', hide);
+      parent.addEventListener('mouseout', show);
     }
   });
+};
+
+/**
+ * Show the element
+ */
+const show = function() {
+  const el = this.querySelector('ul.sfcvt');
+  if (el !== null)
+    el.style.display = 'block';
+};
+
+/**
+ * Hide the element
+ */
+const hide = function() {
+  const el = this.querySelector('ul.sfcvt');
+  if (el !== null)
+    el.style.display = 'none';
 };
 
 /**
