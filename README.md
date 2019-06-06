@@ -1,7 +1,5 @@
 # Show Facebook Computer Vision Tags Chrome Extension
 
-*Want to try this? [Install it from the Chrome Web Store](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US) or the [Firefox Add-ons website](https://addons.mozilla.org/en-US/firefox/addon/show-computer-vision-tags/)*
-
 ![](https://cloud.githubusercontent.com/assets/896692/21574672/fa4cecb4-ceab-11e6-896c-101025c68dc3.png)
 
 Since April 2016, Facebook has been [automatically adding `alt` tags](https://code.facebook.com/posts/457605107772545/under-the-hood-building-accessibility-tools-for-the-visually-impaired-on-facebook/) to images
@@ -60,7 +58,8 @@ These are just a few examples. See what kinds of things Facebook has found in yo
 
 Option 1: From the Chrome Web Store
 
-1. [Click here and choose "+ Add to Chrome"](https://chrome.google.com/webstore/detail/show-facebook-computer-vi/elafbihhbfmfihdflghclaclcilcnmie?hl=en-US&gl=US)
+1. Update: Sorry, this is extension not currently available in the Chrome Web Store. Facebook filed a Trademark complaint 
+   due to the name of the extension having the word "Facebook" in it, so I had to remove it. 
 
 Option 2: From Source
 
