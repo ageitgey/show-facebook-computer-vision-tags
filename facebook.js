@@ -83,6 +83,8 @@ if (locale === 'Locale_es_LA') {
   makeLocaleRequest('/locales/de/messages.json');
 } else if (locale === 'Locale_en_GB' || locale === 'Locale_en_US') {
   makeLocaleRequest('/locales/en_US/messages.json');
+} else if (locale === 'Locale_tr_TR') {
+  makeLocaleRequest('/locales/tr_TR/messages.json');
 } else if (locale === 'Locale_fr_FR') {
   makeLocaleRequest('/locales/fr/messages.json');
 } else if (locale === 'Locale_it_IT') {
